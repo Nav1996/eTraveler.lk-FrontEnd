@@ -1,0 +1,63 @@
+<div fxLayout="row wrap" fxLayoutGap="20px " >
+  <mat-card style="width: 300px; background-size: cover; border: 1px solid blue; ">
+    <mat-card-title>Register Package </mat-card-title>
+<mat-card-content>
+<form [formGroup]="registerNewPackageForm" (ngSubmit)="onSubmit()">
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Name" formControlName="name">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="placesToVisit" formControlName="placesToVisit">
+      
+    </mat-form-field>
+    <button  mat-button  (click)="addPlaceArray()" ><span class="material-icons">
+      add_circle
+      </span></button>
+    <mat-chip-list    >
+        <mat-chip *ngFor="let c of placesToVisitArray" color="primary"   selected>{{c}}</mat-chip>
+    </mat-chip-list>
+  </p>
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="District" formControlName="district">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="ProviderEmail" formControlName="providerEmail">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Hotels Available" formControlName="hotelsAvailable">
+      
+    </mat-form-field>
+    <button  mat-button  (click)="addHotelArray()" ><span class="material-icons">
+      add_circle
+      </span></button>
+    <mat-chip-list    >
+        <mat-chip *ngFor="let c of hotelsAvailableArray" color="primary"   selected>{{c}}</mat-chip>
+    </mat-chip-list>
+  </p>
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Transportation Method" formControlName="transportationMethod">
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Image Url" formControlName="imageUrl">
+    </mat-form-field>
+  </p>
+  
+  <p class="button">
+    <button type="submit" mat-button style="border: 1px solid blue;">Register</button>
+  </p>
+</form>
+</mat-card-content>
+</mat-card>
+</div>
