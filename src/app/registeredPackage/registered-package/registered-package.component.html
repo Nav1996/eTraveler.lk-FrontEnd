@@ -1,0 +1,33 @@
+<app-navigation [currentUser]="currentUser" [userType]="userType"></app-navigation>
+<div fxLayout="row wrap" fxLayoutGap="20px">
+    <ul *ngFor="let b of registeredPackage">
+        
+    
+        <mat-card style="max-width: 300px; background-size: cover;" >
+            
+            <mat-card-title >{{b.name}}</mat-card-title>
+            <mat-card-subtitle>District : {{b.district}}</mat-card-subtitle>
+            
+            
+
+            <h3>Status</h3>
+            <mat-chip  color="warn" *ngIf="!b.isAccepted"  selected>Still not Accepted</mat-chip>
+            <mat-chip  color="accent" *ngIf="b.isAccepted"  selected> Accepted</mat-chip>
+
+            <h3>Provider</h3>
+            <mat-chip color="primary" selected>{{b.providerEmail}}</mat-chip>
+            
+
+            
+            
+            
+            
+            
+          </mat-card>
+        
+    
+    
+    </ul>
+    </div>
+
+
